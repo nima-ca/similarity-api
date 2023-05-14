@@ -5,8 +5,6 @@ import SignOutButton from "@/components/SignOutButton";
 import SignInButton from "@/components/SignInButton";
 import ThemeToggle from "@/components/ThemeToggle";
 
-interface NavbarProps {}
-
 const Navbar = async () => {
   const session = await getServerSession();
 
@@ -17,12 +15,11 @@ const Navbar = async () => {
           Text Similarity 1.0
         </Link>
 
-        <div className="md:hidden">
-          <ThemeToggle />
-        </div>
-
-        <div className="flex mx-3">
-          <div className="hidden md:flex gap-4 mx-3">
+        <div className="flex mx-2">
+          <div className="md:hidden mx-2">
+            <ThemeToggle />
+          </div>
+          <div className="hidden md:flex gap-4 mx-2">
             <ThemeToggle />
             <Link
               href="/documentation"
