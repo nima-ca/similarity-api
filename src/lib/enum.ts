@@ -3,3 +3,8 @@ export enum colorModes {
   DARK = "dark",
   LIGHT = "light",
 }
+
+export enum SupportedLanguages {
+  PYTHON = "python",
+  NODEJS = "nodejs",
+}
