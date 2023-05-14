@@ -16,7 +16,7 @@ export const buttonVariants = cva(
           "bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-slate-400 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent",
         link: "bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent",
       },
-      sizes: {
+      size: {
         default: "h-10 py-2 px-4",
         sm: "h-9 px-2 rounded-md",
         lg: "h-11 px-8 rounded-md",
@@ -24,7 +24,7 @@ export const buttonVariants = cva(
     },
     defaultVariants: {
       variant: "default",
-      sizes: "default",
+      size: "default",
     },
   }
 );
@@ -38,11 +38,11 @@ interface ButtonProps
 const Button: FunctionComponent<ButtonProps> = forwardRef<
   HTMLButtonElement,
   ButtonProps
->(({ children, className, variant, sizes, isLoading, ...props }, ref) => {
+>(({ children, className, variant, size, isLoading, ...props }, ref) => {
   return (
     <button
       ref={ref}
-      className={cn(buttonVariants({ className, variant, sizes }))}
+      className={cn(buttonVariants({ className, variant, size }))}
       disabled={isLoading}
       {...props}
     >
