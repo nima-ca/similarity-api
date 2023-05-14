@@ -3,6 +3,7 @@
 import { FunctionComponent, useState } from "react";
 import Button from "@/ui/Button";
 import { signOut } from "next-auth/react";
+import { toast } from "@/ui/Toast";
 
 interface SignOutButtonProps {}
 
@@ -16,11 +17,11 @@ const SignOutButton: FunctionComponent<SignOutButtonProps> = () => {
       await signOut();
       setIsLoading(false);
     } catch (error) {
-      // toast({
-      //     title: 'Error signing Out',
-      //     message: 'Try again later',
-      //     type: 'error'
-      // })
+      toast({
+        title: "Error signing Out",
+        message: "Try again later",
+        type: "error",
+      });
       setIsLoading(false);
     }
   };

@@ -3,6 +3,7 @@
 import { FunctionComponent, useState } from "react";
 import Button from "@/ui/Button";
 import { signIn } from "next-auth/react";
+import { toast } from "@/ui/Toast";
 
 interface SignInButtonProps {}
 
@@ -16,11 +17,11 @@ const SignInButton: FunctionComponent<SignInButtonProps> = () => {
       await signIn("google");
       setIsLoading(false);
     } catch (error) {
-      // toast({
-      //     title: 'Error signing in with Google',
-      //     message: 'Try again later',
-      //     type: 'error'
-      // })
+      toast({
+        title: "Error signing in with Google",
+        message: "Try again later",
+        type: "error",
+      });
       setIsLoading(false);
     }
   };
