@@ -8,3 +8,12 @@ export enum SupportedLanguages {
   PYTHON = "python",
   NODEJS = "nodejs",
 }
+
+export enum methods {
+  GET = "GET",
+  POST = "POST",
+  PUT = "PUT",
+  PATCH = "PATCH",
+  DELETE = "DELETE",
+  OPTIONS = "OPTIONS",
+}
