@@ -12,17 +12,15 @@ const SignInButton: FunctionComponent<SignInButtonProps> = () => {
 
   const signInWithGoogle = async () => {
     setIsLoading(true);
-
     try {
-      await signIn("google");
-      setIsLoading(false);
+      const result = await signIn("google");
+      console.log(result);
     } catch (error) {
       toast({
         title: "Error signing in with Google",
         message: "Try again later",
         type: "error",
       });
-      setIsLoading(false);
     }
   };
 
