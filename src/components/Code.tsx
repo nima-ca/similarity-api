@@ -42,7 +42,7 @@ const Code: FunctionComponent<CodeProps> = ({
   }, [code, show, animated, animationDelay]);
 
   const lines = text.split(/\r\n|\r|\n/).length;
-  const theme = appTheme === colorModes.LIGHT ? LightTheme : darkTheme;
+  const theme = appTheme === colorModes.DARK ? darkTheme : LightTheme;
 
   const style: CSSProperties = {
     maxHeight: show ? lines * 24 : 0,

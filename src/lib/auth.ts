@@ -85,18 +85,3 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
-
-// export const authOptions: NextAuthOptions = {
-//   providers: [
-//     GitHubProvider({
-//       clientId: process.env.GITHUB_CLIENT_ID!,
-//       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
-//     }),
-//   ],
-//   adapter: PrismaAdapter(db),
-//   callbacks: {
-//     redirect() {
-//       return "/dashboard";
-//     },
-//   },
-// };
