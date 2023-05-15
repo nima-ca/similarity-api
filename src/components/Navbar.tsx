@@ -16,11 +16,11 @@ const Navbar = async () => {
           Text Similarity 1.0
         </Link>
 
-        <div className="flex mx-2">
-          <div className="md:hidden mx-2">
-            <ThemeToggle />
-          </div>
-          <div className="hidden md:flex gap-4 mx-2">
+        <div className="md:hidden mx-2">
+          <ThemeToggle />
+        </div>
+        <div className="hidden md:flex items-center mx-2">
+          <div className="gap-4 mx-2 flex items-center">
             <ThemeToggle />
             <Link
               href="/documentation"
@@ -28,20 +28,20 @@ const Navbar = async () => {
             >
               Documentation
             </Link>
+            {session ? (
+              <>
+                <Link
+                  href="/dashboard"
+                  className={buttonVariants({ variant: "ghost" })}
+                >
+                  DashBoard
+                </Link>
+                <SignOutButton />
+              </>
+            ) : (
+              <SignInButton />
+            )}
           </div>
-          {session ? (
-            <>
-              <Link
-                href="/dashboard"
-                className={buttonVariants({ variant: "ghost" })}
-              >
-                DashBoard
-              </Link>
-              <SignOutButton />
-            </>
-          ) : (
-            <SignInButton />
-          )}
         </div>
       </div>
     </div>

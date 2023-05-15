@@ -1,5 +1,13 @@
 import { colorModes } from "@src/lib/enum";
-import { Sun, Moon, Laptop, ChevronRight, ChevronLeft } from "lucide-react";
+import {
+  Sun,
+  Moon,
+  Laptop,
+  ChevronRight,
+  ChevronLeft,
+  Key,
+  Copy,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 import { SVGProps } from "react";
 
@@ -58,6 +66,8 @@ const Icons = {
   ChevronLeft,
   GoogleIcon,
   GithubIcon,
+  Key,
+  Copy,
 };
 
 export default Icons;
