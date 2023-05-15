@@ -4,20 +4,29 @@ import { FunctionComponent, useState } from "react";
 import Button from "@/ui/Button";
 import { signIn } from "next-auth/react";
 import { toast } from "@/ui/Toast";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/ui/DropDownMenu";
+import Icons from "@/components/Icons";
 
-interface SignInButtonProps {}
+enum loginProviders {
+  Google = "google",
+  Github = "github",
+}
 
-const SignInButton: FunctionComponent<SignInButtonProps> = () => {
+const SignInButton: FunctionComponent = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const signInWithGoogle = async () => {
+  const login = async ({ provider }: { provider: loginProviders }) => {
     setIsLoading(true);
     try {
-      const result = await signIn("google");
-      console.log(result);
+      await signIn(provider);
     } catch (error) {
       toast({
-        title: "Error signing in with Google",
+        title: `Error signing in with ${provider}`,
         message: "Try again later",
         type: "error",
       });
@@ -25,9 +34,28 @@ const SignInButton: FunctionComponent<SignInButtonProps> = () => {
   };
 
   return (
-    <Button onClick={signInWithGoogle} isLoading={isLoading}>
-      Sign In
-    </Button>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button isLoading={isLoading}>
+          Sign In
+          <span className="sr-only">Sign In</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" forceMount>
+        <DropdownMenuItem
+          onClick={() => login({ provider: loginProviders.Google })}
+        >
+          <Icons.GoogleIcon className="mr-2 h-4 w-4" />
+          <span>Google</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => login({ provider: loginProviders.Github })}
+        >
+          <Icons.GithubIcon className="mr-2 h-4 w-4" />
+          <span>Github</span>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
