@@ -17,3 +17,8 @@ export enum methods {
   DELETE = "DELETE",
   OPTIONS = "OPTIONS",
 }
+
+export enum loginProviders {
+  Google = "google",
+  Github = "github",
+}

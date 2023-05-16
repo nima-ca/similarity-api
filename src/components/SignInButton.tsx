@@ -11,11 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/ui/DropDownMenu";
 import Icons from "@/components/Icons";
-
-enum loginProviders {
-  Google = "google",
-  Github = "github",
-}
+import { loginProviders } from "@src/lib/enum";
 
 const SignInButton: FunctionComponent = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);

@@ -6,6 +6,7 @@ import { useTheme } from "next-themes";
 import Highlight, { defaultProps, type Language } from "prism-react-renderer";
 import darkTheme from "prism-react-renderer/themes/nightOwl";
 import LightTheme from "prism-react-renderer/themes/nightOwlLight";
+import { isSystemThemeDark } from "@src/lib/utils";
 
 interface CodeProps {
   code: string;
@@ -22,7 +23,12 @@ const Code: FunctionComponent<CodeProps> = ({
   language,
   show,
 }) => {
-  const { theme: appTheme } = useTheme();
+  const { theme: appTheme, setTheme } = useTheme();
+
+  if (appTheme === colorModes.SYSTEM) {
+    const isDark = isSystemThemeDark();
+    setTheme(isDark ? colorModes.DARK : colorModes.LIGHT);
+  }
 
   const [text, setText] = useState<string>(animated ? "" : code);
 

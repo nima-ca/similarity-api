@@ -9,6 +9,8 @@ const envSchema = z.object({
   GITHUB_CLIENT_SECRET: z.string().nonempty(),
   DATABASE_URL: z.string().nonempty(),
   OPENAI_API_KEY: z.string().nonempty(),
+  REDIS_URL: z.string().nonempty(),
+  REDIS_SECRET: z.string().nonempty(),
 });
 
 try {
@@ -21,6 +23,8 @@ try {
     GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
     DATABASE_URL: process.env.DATABASE_URL,
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+    REDIS_URL: process.env.REDIS_URL,
+    REDIS_SECRET: process.env.REDIS_SECRET,
   });
 } catch (error) {
   if (error instanceof z.ZodError) {

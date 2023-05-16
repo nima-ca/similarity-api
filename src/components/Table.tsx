@@ -10,6 +10,7 @@ import { ApiRequest } from "@prisma/client";
 import { useTheme } from "next-themes";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { colorModes } from "@src/lib/enum";
+import { isSystemThemeDark } from "@src/lib/utils";
 
 type ModifiedRequestType<K extends keyof ApiRequest> = Omit<ApiRequest, K> & {
   timestamp: string;
@@ -54,7 +55,12 @@ const columns = columnsDraft.map((col) => {
 });
 
 const Table: FunctionComponent<TableProps> = ({ userRequests }) => {
-  const { theme: appTheme } = useTheme();
+  const { theme: appTheme, setTheme } = useTheme();
+
+  if (appTheme === colorModes.SYSTEM) {
+    const isDark = isSystemThemeDark();
+    setTheme(isDark ? colorModes.DARK : colorModes.LIGHT);
+  }
 
   const theme = createTheme({
     palette: {
