@@ -1,5 +1,3 @@
-"use client";
-
 import Icons from "@/components/Icons";
 import { buttonVariants } from "@/ui/Button";
 import LargeHeading from "@/ui/LargeHeading";
@@ -7,14 +5,13 @@ import Paragraph from "@/ui/Paragraph";
 import UserAuthForm from "@src/components/UserAuthForm";
 import { Metadata } from "next";
 import Link from "next/link";
-import { FC } from "react";
 
 export const metadata: Metadata = {
   title: "Similarity API | Login",
   description: "Free & open-source text similarity API",
 };
 
-const Login: FC = () => {
+const Login = async () => {
   return (
     <div className="absolute inset-0 mx-auto container flex h-screen flex-col items-center justify-center ">
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 max-w-lg">
