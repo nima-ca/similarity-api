@@ -22,6 +22,11 @@ const RequestApiKey: FunctionComponent = () => {
     try {
       const generatedApiKey = await createApiKey();
       setApiKey(generatedApiKey ?? null);
+      toast({
+        title: "Success",
+        message: "Api key generated successfully!",
+        type: "success",
+      });
     } catch (error) {
       if (error instanceof Error) {
         toast({
@@ -47,7 +52,11 @@ const RequestApiKey: FunctionComponent = () => {
       <div className="flex flex-col gap-6 items-center">
         <Icons.Key className="mx-auto h-12 w-12 text-gray-400 " />
         <LargeHeading>Request your Api Key</LargeHeading>
-        <Paragraph>You haven&apos;t requested an API key yet.</Paragraph>
+        <Paragraph>
+          {apiKey
+            ? "🚀 Here is your API key: "
+            : "You haven't requested an API key yet."}
+        </Paragraph>
       </div>
 
       <form onSubmit={createNewApiKey} className="mt-6 sm:flex sm:items-center">
