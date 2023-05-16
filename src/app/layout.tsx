@@ -1,9 +1,9 @@
 import "@/styles/globals.css";
+import { Toaster } from "@/ui/Toast";
 import Navbar from "@src/components/Navbar";
 import Providers from "@src/components/Providers";
 import { cn } from "@src/lib/utils";
 import { Inter } from "next/font/google";
-import { Toaster } from "@/ui/Toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
