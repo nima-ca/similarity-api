@@ -1,9 +1,9 @@
 import { withAuth } from "next-auth/middleware";
 
-import { Redis } from "@upstash/redis";
 import { Ratelimit } from "@upstash/ratelimit";
-import { NextResponse } from "next/server";
+import { Redis } from "@upstash/redis";
 import { getToken } from "next-auth/jwt";
+import { NextResponse } from "next/server";
 import { toast } from "./components/ui/Toast";
 
 const REQUEST_LIMIT_PER_HOUR = 10;

@@ -1,12 +1,12 @@
+import { withMethods } from "@src/lib/api-middleware/withMethods";
 import { authOptions } from "@src/lib/auth";
 import { db } from "@src/lib/db";
+import { methods } from "@src/lib/enum";
 import { CreateApiData } from "@src/types/api";
+import { nanoid } from "nanoid";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import { nanoid } from "nanoid";
 import { z } from "zod";
-import { withMethods } from "@src/lib/api-middleware/withMethods";
-import { methods } from "@src/lib/enum";
 
 const handler = async (
   req: NextApiRequest,

@@ -13,7 +13,7 @@ import Icons from "@/components/Icons";
 import { colorModes } from "@src/lib/enum";
 
 const ThemeToggle: FunctionComponent = () => {
-  const { setTheme, theme } = useTheme();
+  const { setTheme } = useTheme();
 
   return (
     <DropdownMenu>
