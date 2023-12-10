@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Text Similarity Detection API 🚀
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is a web API developed to detect the similarity of two texts. It is built using TypeScript, React, Next.js, Tailwind CSS, Material UI, and Prisma as the ORM. The API provides a powerful and efficient solution for comparing textual content and determining their similarity.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features 🌟
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Text Similarity Detection:** Analyze and measure the similarity between two texts.
+- **Web Interface:** A user-friendly web interface built with React and Next.js for easy interaction with the API.
+- **Modern Design:** Utilizes Tailwind CSS and Material UI for a sleek and responsive user interface.
+- **Data Persistence:** Prisma serves as the ORM to interact with the database, ensuring efficient data storage and retrieval.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack ⚙️
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **TypeScript:** A statically typed superset of JavaScript, enhancing code quality and developer productivity.
+- **React:** A popular JavaScript library for building user interfaces, providing a dynamic and interactive user experience.
+- **Next.js:** A React framework for building server-rendered and statically generated web applications, offering a performant and scalable solution.
+- **Tailwind CSS:** A utility-first CSS framework that makes styling intuitive and consistent.
+- **Material UI:** A React UI framework for creating visually appealing and consistent user interfaces.
+- **Prisma:** A modern database toolkit for TypeScript and Node.js, simplifying database access with a type-safe API.
 
-## Learn More
+## Getting Started 🏁
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js and npm installed
+- PostgreSQL database
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Installation 🛠️
 
-## Deploy on Vercel
+1. Clone the repository:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+    git clone https://github.com/nima-ca/similarity-api.git
+   ```
+   
+2. Install dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+    yarn install
+   ```
+
+3. Run the project:
+
+   ```bash
+    yarn dev
+   ```
+
+Feel free to customize it further based on your specific project details and preferences.
